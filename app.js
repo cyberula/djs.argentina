@@ -1,19 +1,19 @@
 ﻿// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: AIzaSyDTkY0RPbl6PMeTJD__SlSc-SwR8eVVuZI,
+  authDomain: AIzaSyDTkY0RPbl6PMeTJD__SlSc-SwR8eVVuZI.firebaseapp.com,
+  projectId: AIzaSyDTkY0RPbl6PMeTJD__SlSc-SwR8eVVuZI,
+  storageBucket: djsar-eb38f.appspot.com,
+  messagingSenderId:  550259297483,
+  appId:1:550259297483:web:d73f5935a07f67f8b49f4e
 };
 
-// Initialize Firebase (Compat SDK)
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-// References to Auth and Firestore services
-const auth = firebaseApp.auth();
-const db = firebaseApp.firestore();
+// Get references to Auth and Firestore services
+const auth = firebase.auth();
+const db = firebase.firestore();
 
 (() => {
     const form = document.querySelector('.signup-form');
@@ -30,19 +30,19 @@ const db = firebaseApp.firestore();
         if (!endpoint) {
             if (statusEl) {
                 statusEl.classList.add('is-error');
-                statusEl.textContent = 'No se defini\u00F3 el endpoint de Firebase.';
+                statusEl.textContent = 'No se definio el endpoint de Firebase.';
             }
             return;
         }
 
         if (statusEl) {
             statusEl.classList.remove('is-error', 'is-success');
-            statusEl.textContent = 'Enviando\u2026';
+            statusEl.textContent = 'Enviando...';
         }
 
         if (submitButton) {
             submitButton.disabled = true;
-            submitButton.textContent = 'Enviando\u2026';
+            submitButton.textContent = 'Enviando...';
         }
 
         const formData = new FormData(form);
@@ -55,14 +55,14 @@ const db = firebaseApp.firestore();
             });
 
             if (!response.ok) {
-                let message = 'No pudimos enviar tu info. Intent\u00E1 de nuevo.';
+                let message = 'No pudimos enviar tu info. Intentalo de nuevo.';
                 try {
                     const errorPayload = await response.json();
                     if (errorPayload && typeof errorPayload.message === 'string') {
                         message = errorPayload.message;
                     }
                 } catch (_) {
-                    // ignore JSON parse errors for error response
+                    // ignore
                 }
                 throw new Error(message);
             }
@@ -74,7 +74,7 @@ const db = firebaseApp.firestore();
                     successMessage = payload.message;
                 }
             } catch (_) {
-                // ignore JSON parse errors for success response
+                // ignore JSON parse errors, keep default message
             }
 
             if (statusEl) {
@@ -87,7 +87,7 @@ const db = firebaseApp.firestore();
         } catch (error) {
             if (statusEl) {
                 statusEl.classList.add('is-error');
-                statusEl.textContent = error.message || 'No pudimos enviar tu info. Intent\u00E1 de nuevo.';
+                statusEl.textContent = error.message || 'No pudimos enviar tu info. Intentalo de nuevo.';
                 statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         } finally {
