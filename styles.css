@@ -472,6 +472,24 @@ button[type="submit"]:hover {
     text-align: center;
 }
 
+.form-status {
+    margin: 12px 0 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    min-height: 1.1em;
+}
+
+.form-status.is-success {
+    color: var(--accent-alt);
+}
+
+.form-status.is-error {
+    color: var(--accent);
+}
+
 .footer {
     background: #010103;
     color: var(--muted);
@@ -531,6 +549,7 @@ button[type="submit"]:hover {
         letter-spacing: 0.18em;
     }
 }
+
 
 
 

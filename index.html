@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDKs for Authentication and Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
     <header class="topbar">
@@ -79,7 +83,7 @@
                 <h2>Sumate al circuito</h2>
                 <p>Complet&aacute; el formulario y reservamos tu subdominio cuando verifiquemos el material.</p>
             </div>
-            <form class="signup-form" method="post" action="/api/registro" enctype="multipart/form-data">
+            <form class="signup-form" method="post" action="https://us-central1-YOUR_PROJECT.cloudfunctions.net/registro" data-endpoint="https://us-central1-YOUR_PROJECT.cloudfunctions.net/registro" enctype="multipart/form-data">
                 <div class="form-grid">
                     <label>Nombre art&iacute;stico
                         <input type="text" name="stage_name" placeholder="Nombre DJ" required>
@@ -129,6 +133,7 @@
                     <span>Acepto que djs.ar procese mi informaci&oacute;n para generar el mini sitio y mostrarlo en el directorio.</span>
                 </label>
                 <button type="submit">Enviar</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
                 <p class="form-note">Respondemos dentro de 72 h con el pr&oacute;ximo paso y chequeo de audio.</p>
             </form>
         </div>
@@ -141,6 +146,7 @@
         </div>
     </footer>
 
+    <script src="app.js"></script>
     <script>
         const yearSpan = document.getElementById('year');
         if (yearSpan) {
@@ -149,6 +155,9 @@
     </script>
 </body>
 </html>
+
+
+
 
 
 
