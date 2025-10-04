@@ -3,4 +3,3 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/monsqcgn/repositories/djs.argentina
     - /bin/rsync -a --delete --exclude='.git' --exclude='.gitignore' --exclude='.cpanel.yml' ./ /
-
