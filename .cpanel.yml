@@ -1,5 +1,5 @@
 ﻿---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/monsqcgn/public_html
-    - /bin/rsync -a --delete --exclude='.git' --exclude='.gitignore' --exclude='.cpanel.yml' ./ /home/monsqcgn/public_html/
+    - export DEPLOYPATH=/home/monsqcgn/djs.ar
+    - /bin/rsync -a --delete --exclude='.git' --exclude='.gitignore' --exclude='.cpanel.yml' ./ /home/monsqcgn/djs.ar/
