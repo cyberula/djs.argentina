@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>djs.ar &middot; Circuito under argentino</title>
+    <meta name="description" content="Agenda y directorio de DJs del circuito under argentino. Eventos DIY, crews independientes y formulario para sumarte a djs.ar." />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="logo"><img src="logo.png" alt="djs.ar logo"></div>
+            <p class="slogan">el archivo del under argentino</p>
+        </div>
+    </header>
+
+    <section class="intro-blurb">
+        <div class="intro-inner">
+            <p>djs.ar mapea al circuito under argentino: centralizamos agendas DIY, directorios de crews y un formulario para que nuevas escenas y DJS emergentes se sumen al archivo.</p>
+        </div>
+    </section>
+    <nav class="main-nav">
+        <div class="nav-inner">
+            <a href="#directorio">directorio</a>
+            <a href="#registro">sumate</a>
+            <a href="mailto:hola@djs.ar">contacto</a>
+        </div>
+    </nav>
+
+    <main class="layout">
+        <aside id="directorio" class="sidebar">
+            <div class="sidebar-content">
+                <h2>Directorio under</h2>
+                <ul class="dj-list">
+                    <li class="dj-card">
+                        <img class="dj-avatar" src="dj.svg" alt="Arcadia 160 avatar">
+                        <div class="dj-info">
+                            <span class="dj-name">Arcadia 160</span>
+                            <span class="dj-meta">Buenos Aires &middot; Jungle / footwork</span>
+                            <a href="#">arcadia.djs.ar</a>
+                        </div>
+                    </li>
+                    <li class="dj-card">
+                        <img class="dj-avatar" src="dj.svg" alt="Lupe Far&iacute;as avatar">
+                        <div class="dj-info">
+                            <span class="dj-name">Lupe Far&iacute;as</span>
+                            <span class="dj-meta">Rosario &middot; House soulful</span>
+                            <a href="#">lupe.djs.ar</a>
+                        </div>
+                    </li>
+                    <li class="dj-card">
+                        <img class="dj-avatar" src="dj.svg" alt="Mika Villalba avatar">
+                        <div class="dj-info">
+                            <span class="dj-name">Mika Villalba</span>
+                            <span class="dj-meta">C&oacute;rdoba &middot; Techno mental</span>
+                            <a href="#">mikav.djs.ar</a>
+                        </div>
+                    </li>
+                    <li class="dj-card">
+                        <img class="dj-avatar" src="dj.svg" alt="Proyecto Andes avatar">
+                        <div class="dj-info">
+                            <span class="dj-name">Proyecto Andes</span>
+                            <span class="dj-meta">Mendoza &middot; Downtempo ritual</span>
+                            <a href="#">andes.djs.ar</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+        <section id="registro" class="form-section">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h2>Sumate al circuito</h2>
+                <p>Complet&aacute; el formulario y reservamos tu subdominio cuando verifiquemos el material.</p>
+            </div>
+            <form class="signup-form" method="post" action="/api/registro" enctype="multipart/form-data">
+                <div class="form-grid">
+                    <label>Nombre art&iacute;stico
+                        <input type="text" name="stage_name" placeholder="Nombre DJ" required>
+                    </label>
+                    <label>Correo
+                        <input type="email" name="email" placeholder="tuemail@dominio.com" required>
+                    </label>
+                    <label>Ciudad &middot; Provincia
+                        <input type="text" name="location" placeholder="Ciudad, Provincia" required>
+                    </label>
+                    <label>G&eacute;nero / mood
+                        <input type="text" name="genre" placeholder="Breaks, techno, dub..." required>
+                    </label>
+                    <label>Instagram
+                        <input type="url" name="instagram" placeholder="https://instagram.com/tuusuario">
+                    </label>
+                    <label>SoundCloud / Mixcloud
+                        <input type="url" name="soundcloud" placeholder="https://soundcloud.com/tuusuario">
+                    </label>
+                    <label>YouTube
+                        <input type="url" name="youtube" placeholder="https://youtube.com/@tuusuario">
+                    </label>
+                    <label>Bandcamp / Spotify
+                        <input type="url" name="bandcamp" placeholder="https://bandcamp.com/tuusuario">
+                    </label>
+                </div>
+                <label>Bio corta
+                    <textarea name="bio" rows="4" placeholder="Recorrido, crews, residencias, lanzamientos" required></textarea>
+                </label>
+                <label>Embed (SoundCloud, YouTube, etc.)
+                    <textarea name="embed" rows="3" placeholder="Peg&aacute; el c&oacute;digo de inserci&oacute;n o URL" required></textarea>
+                </label>
+                <label>Rider t&eacute;cnico
+                    <textarea name="tech_rider" rows="4" placeholder="Mixer, reproductores, monitores, backline" required></textarea>
+                </label>
+                <label>Foto de perfil / press shot
+                    <input type="file" name="profile_image" accept="image/png,image/jpeg" required>
+                </label>
+                <label>Subdominio
+                    <div class="subdomain">
+                        <input type="text" name="subdomain" placeholder="tu-nombre" pattern="[a-z0-9-]+" required>
+                        <span>.djs.ar</span>
+                    </div>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="terms" required>
+                    <span>Acepto que djs.ar procese mi informaci&oacute;n para generar el mini sitio y mostrarlo en el directorio.</span>
+                </label>
+                <button type="submit">Enviar</button>
+                <p class="form-note">Respondemos dentro de 72 h con el pr&oacute;ximo paso y chequeo de audio.</p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>© <span id="year"></span> djs.ar &middot; Archivo del under argentino. Creado por <a href="https://cyberia.com.ar/">Cyberia Digitals</a> con amor.</p>
+            <p><a href="mailto:hola@djs.ar">hola@djs.ar</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const yearSpan = document.getElementById('year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
